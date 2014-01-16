@@ -7,6 +7,7 @@ import (
 	"github.com/blackbeans/goquery"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 	"time"
 )
 
@@ -29,8 +30,8 @@ type MoaInstance struct {
 
 type MoaInStanceManager struct {
 	//用于存放服务名称到moa实例的映射
-	Instances     map[string]*list.List
-	InstanceNames *list.List
+	Instances     map[string][]MoaInstance
+	InstanceNames []string
 }
 
 /**
@@ -80,11 +81,11 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 	}
 	defer resp.Body.Close()
 
-	instances := make(map[string]*list.List, 50)
+	instances := make(map[string][]MoaInstance, 50)
 	//解析出机器列表
 	var hosts []string
 	json.Unmarshal(data, &hosts)
-
+	fmt.Printf("moa hosts:%s, hosts arr len:%n\n", string(data), len(hosts))
 	if nil != hosts {
 		//如果得到了hosts
 		for _, v := range hosts {
@@ -93,12 +94,11 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 			if nil == err {
 				doc.Find("table tbody tr").Each(func(i int, s *goquery.Selection) {
 
-					instance := &MoaInstance{Host: v}
+					instance := MoaInstance{Host: v}
 					s.Find("td").Each(func(j int, ss *goquery.Selection) {
 						if j > 2 {
 							return
 						}
-
 						switch j {
 						case 0:
 							instance.Status = ss.Children().Text()
@@ -115,24 +115,29 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 					instance.StopUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=stop"
 					v, ok := instances[instance.Name]
 					if !ok {
-						v = list.New()
+						v = make([]MoaInstance, 10)
 						instances[instance.Name] = v
 
 					}
+
+					jsonStr, _ := json.Marshal(instance)
+
 					// //将该节点推送
-					v.PushFront(instance)
+					append(v, instance)
+					// fmt.Println("______________" + string(jsonStr) + "-----------------" + strconv.Itoa(v.Len()))
 
 				})
+			} else {
+				fmt.Println(err.Error())
 			}
 		}
 
-		names := list.New()
+		names := make([]string, 10)
 
-		for k, v := range instances {
-			names.PushBack(k)
-
-			jsonStr, _ := json.Marshal(v)
-			fmt.Println(string(jsonStr))
+		for k, _ := range instances {
+			append(names, k)
+			// jsonStr, _ := json.Marshal(v.Front().Value)
+			// fmt.Println(k + "+++++++++++++++++" + strconv.Itoa(v.Len()) + "--------------------" + string(jsonStr))
 		}
 		self.Instances = instances
 		self.InstanceNames = names

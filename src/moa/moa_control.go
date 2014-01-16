@@ -2,6 +2,7 @@ package moa
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -23,10 +24,14 @@ func (self *MoaControl) HandleQueryMoaNameQ(resp http.ResponseWriter, req *http.
 	//没有参数，那么就查询所有的服务
 	if len(instance) <= 0 {
 		instanceNames := self.moamanager.InstanceNames
+		names := make([]string, 10)
 
-		names, _ := json.Marshal(instanceNames)
-
-		resp.Write(names)
+		for _, v := range instanceNames {
+			append(names, v)
+		}
+		namesJson, _ := json.Marshal(names)
+		fmt.Println("query:" + string(namesJson))
+		resp.Write(namesJson)
 	} else {
 
 		v, ok := self.moamanager.Instances[instance]
