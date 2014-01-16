@@ -2,6 +2,7 @@ package location
 
 import (
 	"encoding/json"
+	"entry"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -13,11 +14,6 @@ const (
 	SWITCH_ON_GOREDIS_READ = "/switch/location_notify/switchOn_GoRedis_Read"
 	SWITCH_ON_RADAR        = "/switch/location_notify/switchOn_friend_radar"
 )
-
-type Response struct {
-	Ec int32  `json:"ec"`
-	Em string `json:"em"`
-}
 
 type OpTag struct {
 	Label  string `json:"label"`
@@ -69,7 +65,7 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 	switchOn_friend_radar := req.FormValue("switchOn_friend_radar")
 
 	succ := false
-	reponse := &Response{}
+	reponse := &entry.Response{}
 	//关闭goredis
 	if len(switchOn_GoRedis) > 0 {
 		switchOn_GoRedis_bool, _ := strconv.ParseBool(switchOn_GoRedis)
