@@ -29,7 +29,7 @@ type MoaInstance struct {
 
 type MoaInStanceManager struct {
 	//用于存放服务名称到moa实例的映射
-	Instances     *map[string]list.List
+	Instances     map[string]*list.List
 	InstanceNames *list.List
 }
 
@@ -80,7 +80,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 	}
 	defer resp.Body.Close()
 
-	instances := make(map[string]list.List, 50)
+	instances := make(map[string]*list.List, 50)
 	//解析出机器列表
 	var hosts []string
 	json.Unmarshal(data, &hosts)
@@ -115,7 +115,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 					instance.StopUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=stop"
 					v, ok := instances[instance.Name]
 					if !ok {
-						v = *list.New()
+						v = list.New()
 						instances[instance.Name] = v
 
 					}
@@ -134,8 +134,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 			jsonStr, _ := json.Marshal(v)
 			fmt.Println(string(jsonStr))
 		}
-
-		self.Instances = &instances
+		self.Instances = instances
 		self.InstanceNames = names
 	}
 
