@@ -114,12 +114,11 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 					v, ok := instances[instance.Name]
 					if !ok {
 						v = make([]MoaInstance, 10)
-						instances[instance.Name] = v
 
 					}
 
 					// //将该节点推送
-					v = append(v, instance)
+					instances[instance.Name] = append(v, instance)
 					// jsonStr, _ := json.Marshal(instance)
 					// fmt.Println("______________" + string(jsonStr) + "-----------------" + strconv.Itoa(v.Len()))
 
