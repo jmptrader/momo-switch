@@ -118,10 +118,9 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 
 					}
 
-					jsonStr, _ := json.Marshal(instance)
-
 					// //将该节点推送
-					append(v, instance)
+					v = append(v, instance)
+					// jsonStr, _ := json.Marshal(instance)
 					// fmt.Println("______________" + string(jsonStr) + "-----------------" + strconv.Itoa(v.Len()))
 
 				})
@@ -133,7 +132,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 		names := make([]string, 10)
 
 		for k, _ := range instances {
-			append(names, k)
+			names = append(names, k)
 			// jsonStr, _ := json.Marshal(v.Front().Value)
 			// fmt.Println(k + "+++++++++++++++++" + strconv.Itoa(v.Len()) + "--------------------" + string(jsonStr))
 		}
