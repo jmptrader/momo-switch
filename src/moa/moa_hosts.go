@@ -117,7 +117,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 					instance.StopUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=stop"
 					v, ok := instances[instance.Name]
 					if !ok {
-						v = make([]MoaInstance, 1)
+						v = make([]MoaInstance, 0)
 
 					}
 
@@ -132,7 +132,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 			}
 		}
 
-		names := make([]string, 1)
+		names := make([]string, 0)
 
 		for k, _ := range instances {
 			names = append(names, k)
