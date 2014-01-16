@@ -1,7 +1,6 @@
 package moa
 
 import (
-	"container/list"
 	"encoding/json"
 	"fmt"
 	"github.com/blackbeans/goquery"
