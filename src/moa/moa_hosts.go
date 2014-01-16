@@ -110,7 +110,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 					})
 
 					if len(instance.Name) <= 0 {
-						continue
+						return
 					}
 
 					instance.RestartUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=restart"
