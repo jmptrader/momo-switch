@@ -79,7 +79,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 	}
 	defer resp.Body.Close()
 
-	instances := make(map[string][]MoaInstance, 50)
+	instances := make(map[string][]MoaInstance, 10)
 	//解析出机器列表
 	var hosts []string
 	json.Unmarshal(data, &hosts)

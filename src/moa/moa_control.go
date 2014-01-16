@@ -32,7 +32,7 @@ func (self *MoaControl) HandleQueryMoaNameQ(resp http.ResponseWriter, req *http.
 
 		v, ok := self.moamanager.Instances[instance]
 		if ok {
-			names, _ := json.Marshal(&v)
+			names, _ := json.Marshal(v)
 			resp.Write(names)
 		}
 	}
