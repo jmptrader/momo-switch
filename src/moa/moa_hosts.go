@@ -27,7 +27,7 @@ type MoaInstance struct {
 
 type MoaInStanceManager struct {
 	//用于存放服务名称到moa实例的映射
-	Instances map[string]list
+	Instances map[string]*list.List
 }
 
 /**
@@ -53,17 +53,13 @@ func (manager *MoaInStanceManager) ScheduleInitHosts() {
 func syncMoaHosts() {
 	resp, err := http.Get(MOA_HOST_URL)
 	if nil != err {
-		recover(func() {
-			fmt.Println("获取MOA机器失败...." + err.Error())
-		})
+		fmt.Println("获取MOA机器失败...." + err.Error())
 		return
 	}
 
-	data, err := ioutil.ReadAll(resp)
+	data, err := ioutil.ReadAll(resp.Body)
 	if nil != err {
-		recover(func() {
-			fmt.Println("获取MOA机器失败...." + err.Error())
-		})
+		fmt.Println("获取MOA机器失败...." + err.Error())
 		return
 	}
 
@@ -73,7 +69,7 @@ func syncMoaHosts() {
 
 	if nil != hosts {
 		//如果得到了hosts
-		for v, _ := range hosts {
+		for _, v := range hosts {
 			fmt.Println("机器名:" + v)
 		}
 
