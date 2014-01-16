@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"location"
+	"moa"
 	"net/http"
 	"zkmanager"
 )
@@ -13,6 +14,9 @@ func main() {
 	fmt.Println("-zkhosts=localhost:2181 来定义zookeeper的地址!")
 	zkhosts := flag.String("zkhosts", "vm-search-001:2181,vm-search-002:2181,vm-search-003:2181", "输入zookeeper地址...请用逗号分隔")
 	flag.Parse()
+
+	moamanager := &moa.MoaInStanceManager{}
+	moamanager.ScheduleInitHosts()
 
 	zkmanager := zkmanager.NewZKManager(*zkhosts)
 
