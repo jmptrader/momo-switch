@@ -79,7 +79,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 	}
 	defer resp.Body.Close()
 
-	instances := make(map[string][]MoaInstance, 10)
+	instances := make(map[string][]MoaInstance)
 	//解析出机器列表
 	var hosts []string
 	json.Unmarshal(data, &hosts)
@@ -113,7 +113,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 					instance.StopUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=stop"
 					v, ok := instances[instance.Name]
 					if !ok {
-						v = make([]MoaInstance, 10)
+						v = make([]MoaInstance)
 
 					}
 
@@ -128,7 +128,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 			}
 		}
 
-		names := make([]string, 10)
+		names := make([]string)
 
 		for k, _ := range instances {
 			names = append(names, k)
