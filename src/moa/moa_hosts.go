@@ -6,6 +6,7 @@ import (
 	"github.com/blackbeans/goquery"
 	"io/ioutil"
 	"net/http"
+	"sort"
 	"strings"
 	"time"
 )
@@ -110,7 +111,8 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 
 					})
 
-					if len(instance.Name) <= 0 || strings.Contains(instance.Name, "redis") {
+					if len(instance.Name) <= 0 || strings.Contains(instance.Name, "redis") ||
+						strings.Contains(instance.Name, "solr-shard") {
 						return
 					}
 
@@ -140,6 +142,8 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 			// jsonStr, _ := json.Marshal(v.Front().Value)
 			// fmt.Println(k + "+++++++++++++++++" + strconv.Itoa(v.Len()) + "--------------------" + string(jsonStr))
 		}
+
+		sort.Sort(names)
 		self.Instances = instances
 		self.InstanceNames = names
 	}
