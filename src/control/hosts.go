@@ -138,7 +138,7 @@ func (self *InstanceManager) syncMoaHosts() {
 					// //将该节点推送
 					instances[instance.Name] = append(v, instance)
 					// jsonStr, _ := json.Marshal(instance)
-					// fmt.Println("______________" + string(jsonStr) + "-----------------" + strconv.Itoa(v.Len()))
+					//fmt.Println("______________" + string(jsonStr) + "-----------------" + strconv.Itoa(v.Len()))
 
 				})
 			} else {

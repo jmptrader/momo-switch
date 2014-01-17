@@ -10,7 +10,7 @@ import (
 // import "code.google.com/p/goprotobuf/proto"
 
 func main() {
-	fmt.Println(strings.Split("feed-solr-shard10-9770", "-shard")[0])
+	fmt.Println(strings.Split("solr-shard20-8985", "-shard")[0])
 
 	opt := levigo.NewOptions()
 	opt.SetCreateIfMissing(true)

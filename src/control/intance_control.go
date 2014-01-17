@@ -33,14 +33,17 @@ func InitControl() *InstanceControl {
 	fmt.Println("初始化moa机器成功........")
 
 	manager = NewManager("solr", func(name string) string {
-
-		return strings.Split(name, "-shard")[0]
+		cluster := strings.Split(name, "-shard")[0]
+		if strings.Contains(cluster, "backup") {
+			cluster = strings.Split(cluster, "-backup")[0]
+		}
+		return cluster
 
 	}, func(instance SupervisorInstance) bool {
 		/**
 		 * 过滤掉redis 和solr
 		 */
-		return !strings.Contains(instance.Name, "solr-shard")
+		return !strings.Contains(instance.Name, "solr")
 
 	})
 	manager.ScheduleInitHosts()
