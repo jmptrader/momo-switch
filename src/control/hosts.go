@@ -7,7 +7,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"sort"
-	"strings"
 	"time"
 )
 

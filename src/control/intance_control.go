@@ -69,7 +69,7 @@ func (self *InstanceControl) HandleQueryMoaNameQ(resp http.ResponseWriter, req *
 	} else {
 		result := &entry.Response{Ec: 404, Em: "不支持的查询"}
 		names, _ := json.Marshal(result)
-		resp.Write([]byte())
+		resp.Write(names)
 	}
 
 }
