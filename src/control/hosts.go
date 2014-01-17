@@ -46,9 +46,9 @@ type InstanceManager struct {
  *初始化manager
  *
  */
-func NewManager(hosttype string, filter *IInstanceFilter) *InstanceManager {
+func NewManager(hostType string, filter IInstanceFilter) *InstanceManager {
 	manager := &InstanceManager{}
-	manager.hostType = hosttype
+	manager.hostType = hostType
 	manager.ScheduleInitHosts()
 	manager.filter = filter
 	return manager
@@ -79,13 +79,13 @@ func (self *InstanceManager) ScheduleInitHosts() {
 func (self *InstanceManager) syncMoaHosts() {
 	resp, err := http.Get(BAISC_URL + self.hostType)
 	if nil != err {
-		fmt.Printf("获取[%s]机器失败....%s\n", self.HostType, err.Error())
+		fmt.Printf("获取[%s]机器失败....%s\n", self.hostType, err.Error())
 		return
 	}
 
 	data, err := ioutil.ReadAll(resp.Body)
 	if nil != err {
-		fmt.Printf("获取[%s]机器失败....%s\n", self.HostType, err.Error())
+		fmt.Printf("获取[%s]机器失败....%s\n", self.hostType, err.Error())
 		return
 	}
 	defer resp.Body.Close()
