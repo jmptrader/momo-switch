@@ -49,8 +49,8 @@ type InstanceManager struct {
 func NewManager(hostType string, filter func(instance SupervisorInstance) bool) *InstanceManager {
 	manager := &InstanceManager{}
 	manager.hostType = hostType
-	manager.ScheduleInitHosts()
 	manager.filter = filter
+	manager.ScheduleInitHosts()
 	return manager
 }
 
