@@ -9,11 +9,11 @@ import (
 )
 
 type InstanceControl struct {
-	managers map[string]InstanceManager
+	managers map[string]*InstanceManager
 }
 
 func InitControl() *InstanceControl {
-	managers := make(map[string]InstanceManager, 0)
+	managers := make(map[string]*InstanceManager, 0)
 
 	manager := NewManager("moa", func(instance SupervisorInstance) bool {
 		/**

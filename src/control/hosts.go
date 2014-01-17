@@ -27,15 +27,15 @@ type SupervisorInstance struct {
 	Info       string `json:"info"`       //启动信息
 }
 
-/**
- * 实例名称过滤
- */
-type IInstanceFilter interface {
-	Filter(instance SupervisorInstance) bool
-}
+// /**
+//  * 实例名称过滤
+//  */
+// type IInstanceFilter interface {
+// 	Filter(instance SupervisorInstance) bool
+// }
 
 type InstanceManager struct {
-	filter   IInstanceFilter
+	filter   func(instance SupervisorInstance) bool
 	hostType string //host类型
 	//用于存放服务名称到moa实例的映射
 	Instances     map[string][]SupervisorInstance
@@ -120,7 +120,7 @@ func (self *InstanceManager) syncMoaHosts() {
 
 					})
 
-					if len(instance.Name) <= 0 || self.filter.Filter(instance) {
+					if len(instance.Name) <= 0 || self.filter(instance) {
 						return
 					}
 
