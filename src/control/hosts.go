@@ -31,7 +31,7 @@ type SupervisorInstance struct {
  * 实例名称过滤
  */
 type IInstanceFilter interface {
-	Filter(instance *SupervisorInstance) bool
+	Filter(instance SupervisorInstance) bool
 }
 
 type InstanceManager struct {

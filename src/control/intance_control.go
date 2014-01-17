@@ -15,10 +15,11 @@ type InstanceControl struct {
 func InitControl() *InstanceControl {
 	managers := make(map[string]*InstanceManager, 0)
 
-	manager := NewManager("moa", func(instance *SupervisorInstance) bool {
+	manager := NewManager("moa", func(instance SupervisorInstance) bool {
 		/**
 		 * 过滤掉redis 和solr
 		 */
+
 		return strings.Contains(instance.Name, "redis") ||
 			strings.Contains(instance.Name, "solr-shard")
 	})
@@ -27,7 +28,7 @@ func InitControl() *InstanceControl {
 
 	fmt.Println("初始化moa机器成功........")
 
-	manager = NewManager("solr", func(instance *SupervisorInstance) bool {
+	manager = NewManager("solr", func(instance SupervisorInstance) bool {
 		/**
 		 * 过滤掉redis 和solr
 		 */
