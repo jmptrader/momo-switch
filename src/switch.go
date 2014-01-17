@@ -1,10 +1,10 @@
 package main
 
 import (
+	"control"
 	"flag"
 	"fmt"
 	"location"
-	"moa"
 	"net/http"
 	"zkmanager"
 )
@@ -15,7 +15,7 @@ func main() {
 	zkhosts := flag.String("zkhosts", "vm-search-001:2181,vm-search-002:2181,vm-search-003:2181", "输入zookeeper地址...请用逗号分隔")
 	flag.Parse()
 
-	moacontrol := moa.InitMoaControl()
+	control := control.InitControl()
 
 	zkmanager := zkmanager.NewZKManager(*zkhosts)
 
@@ -23,6 +23,7 @@ func main() {
 
 	http.HandleFunc("/switch/location_noftiy/conf", radaGoRedis.HandleLocationNotifySwitch)
 	http.HandleFunc("/switch/location_noftiy/q", radaGoRedis.HandleLocationNotifySwitchQ)
-	http.HandleFunc("/switch/moa/q_instances", moacontrol.HandleQueryMoaNameQ)
+	http.HandleFunc("/switch/moa/q_instances", control.HandleQueryMoaNameQ)
+	http.HandleFunc("/switch/solr/q_instances", control.HandleQueryMoaNameQ)
 	http.ListenAndServe(":7979", nil)
 }

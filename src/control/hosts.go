@@ -1,4 +1,4 @@
-package moa
+package control
 
 import (
 	"encoding/json"
@@ -12,14 +12,14 @@ import (
 )
 
 const (
-	MOA_HOST_URL  = "http://kratos.wemomo.com/api/zabbix/hostgroups/moa"
+	BAISC_URL     = "http://kratos.wemomo.com/api/zabbix/hostgroups/"
 	SCHEDULE_TIME = 60 * time.Second
 )
 
 /**
- * moa实例
+ * supervisor实例
  */
-type MoaInstance struct {
+type SupervisorInstance struct {
 	Host       string `json:"host"`       //当前机器名
 	Name       string `json:"name"`       //服务名称
 	RestartUrl string `json:"restarturl"` //重启url
@@ -28,9 +28,18 @@ type MoaInstance struct {
 	Info       string `json:"info"`       //启动信息
 }
 
-type MoaInStanceManager struct {
+/**
+ * 实例名称过滤
+ */
+type IInstanceFilter interface {
+	Filter(instance *SupervisorInstance) bool
+}
+
+type InstanceManager struct {
+	filter   IInstanceFilter
+	hostType string //host类型
 	//用于存放服务名称到moa实例的映射
-	Instances     map[string][]MoaInstance
+	Instances     map[string][]SupervisorInstance
 	InstanceNames []string
 }
 
@@ -38,10 +47,11 @@ type MoaInStanceManager struct {
  *初始化manager
  *
  */
-func NewManager() *MoaInStanceManager {
-	manager := &MoaInStanceManager{}
+func NewManager(hosttype string, filter *IInstanceFilter) *InstanceManager {
+	manager := &InstanceManager{}
+	manager.hostType = hosttype
 	manager.ScheduleInitHosts()
-
+	manager.filter = filter
 	return manager
 }
 
@@ -49,7 +59,7 @@ func NewManager() *MoaInStanceManager {
  *
  * 定时拉取Moa的机器
  */
-func (self *MoaInStanceManager) ScheduleInitHosts() {
+func (self *InstanceManager) ScheduleInitHosts() {
 
 	self.syncMoaHosts()
 	recover()
@@ -67,25 +77,25 @@ func (self *MoaInStanceManager) ScheduleInitHosts() {
 	}()
 }
 
-func (self *MoaInStanceManager) syncMoaHosts() {
-	resp, err := http.Get(MOA_HOST_URL)
+func (self *InstanceManager) syncMoaHosts() {
+	resp, err := http.Get(BAISC_URL + self.hostType)
 	if nil != err {
-		fmt.Println("获取MOA机器失败...." + err.Error())
+		fmt.Printf("获取[%s]机器失败....%s\n", self.HostType, err.Error())
 		return
 	}
 
 	data, err := ioutil.ReadAll(resp.Body)
 	if nil != err {
-		fmt.Println("获取MOA机器失败...." + err.Error())
+		fmt.Printf("获取[%s]机器失败....%s\n", self.HostType, err.Error())
 		return
 	}
 	defer resp.Body.Close()
 
-	instances := make(map[string][]MoaInstance)
+	instances := make(map[string][]SupervisorInstance)
 	//解析出机器列表
 	var hosts []string
 	json.Unmarshal(data, &hosts)
-	fmt.Printf("moa hosts:%s, hosts arr len:%n\n", string(data), len(hosts))
+	fmt.Printf("[%s] hosts:%s, hosts arr len:%n\n", self.hostType, string(data), len(hosts))
 	if nil != hosts {
 		//如果得到了hosts
 		for _, v := range hosts {
@@ -94,7 +104,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 			if nil == err {
 				doc.Find("table tbody tr").Each(func(i int, s *goquery.Selection) {
 
-					instance := MoaInstance{Host: v}
+					instance := SupervisorInstance{Host: v}
 					s.Find("td").Each(func(j int, ss *goquery.Selection) {
 						if j > 2 {
 							return
@@ -111,8 +121,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 
 					})
 
-					if len(instance.Name) <= 0 || strings.Contains(instance.Name, "redis") ||
-						strings.Contains(instance.Name, "solr-shard") {
+					if len(instance.Name) <= 0 || self.filter.Filter(instance) {
 						return
 					}
 
@@ -120,7 +129,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 					instance.StopUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=stop"
 					v, ok := instances[instance.Name]
 					if !ok {
-						v = make([]MoaInstance, 0)
+						v = make([]SupervisorInstance, 0)
 
 					}
 
