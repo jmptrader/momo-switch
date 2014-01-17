@@ -143,7 +143,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 			// fmt.Println(k + "+++++++++++++++++" + strconv.Itoa(v.Len()) + "--------------------" + string(jsonStr))
 		}
 
-		sort.Sort(names)
+		sort.Strings(names)
 		self.Instances = instances
 		self.InstanceNames = names
 	}
