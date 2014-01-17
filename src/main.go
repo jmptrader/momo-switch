@@ -9,6 +9,12 @@ import (
 // import "code.google.com/p/goprotobuf/proto"
 
 func main() {
+	fmt.Println(f.Fd())
+	fmt.Println(err)
+
+	_, err = f.Write([]byte("hello world!"))
+	fmt.Println(err)
+
 	opt := levigo.NewOptions()
 	opt.SetCreateIfMissing(true)
 	opt.SetBlockSize(32 * 1024)

@@ -6,6 +6,7 @@ import (
 	"github.com/blackbeans/goquery"
 	"io/ioutil"
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -109,7 +110,7 @@ func (self *MoaInStanceManager) syncMoaHosts() {
 
 					})
 
-					if len(instance.Name) <= 0 {
+					if len(instance.Name) <= 0 || strings.Contains(instance.Name, "redis") {
 						return
 					}
 
