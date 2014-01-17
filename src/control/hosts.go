@@ -35,8 +35,9 @@ type SupervisorInstance struct {
 // }
 
 type InstanceManager struct {
-	filter   func(instance SupervisorInstance) bool
-	hostType string //host类型
+	filter     func(instance SupervisorInstance) bool
+	namefilter func(name string) string
+	hostType   string //host类型
 	//用于存放服务名称到moa实例的映射
 	Instances     map[string][]SupervisorInstance
 	InstanceNames []string
@@ -46,10 +47,12 @@ type InstanceManager struct {
  *初始化manager
  *
  */
-func NewManager(hostType string, filter func(instance SupervisorInstance) bool) *InstanceManager {
+func NewManager(hostType string, namefilter func(name string) string,
+	filter func(instance SupervisorInstance) bool) *InstanceManager {
 	manager := &InstanceManager{}
 	manager.hostType = hostType
 	manager.filter = filter
+	manager.namefilter = namefilter
 	manager.ScheduleInitHosts()
 	return manager
 }
@@ -114,7 +117,7 @@ func (self *InstanceManager) syncMoaHosts() {
 						case 1:
 							instance.Info = ss.Children().Text()
 						case 2:
-							instance.Name = ss.Children().Text()
+							instance.Name = self.namefilter(ss.Children().Text())
 
 						}
 

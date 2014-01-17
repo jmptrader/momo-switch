@@ -4,16 +4,13 @@ import "github.com/jmhodges/levigo"
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 // import "code.google.com/p/goprotobuf/proto"
 
 func main() {
-	fmt.Println(f.Fd())
-	fmt.Println(err)
-
-	_, err = f.Write([]byte("hello world!"))
-	fmt.Println(err)
+	fmt.Println(strings.Split("feed-solr-shard10-9770", "-shard")[0])
 
 	opt := levigo.NewOptions()
 	opt.SetCreateIfMissing(true)
