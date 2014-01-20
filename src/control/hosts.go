@@ -19,12 +19,13 @@ const (
  * supervisor实例
  */
 type SupervisorInstance struct {
-	Host       string `json:"host"`       //当前机器名
-	Name       string `json:"name"`       //服务名称
-	RestartUrl string `json:"restarturl"` //重启url
-	StopUrl    string `json:"stopurl"`    // 关闭url
-	Status     string `json:"status"`     //当前状态
-	Info       string `json:"info"`       //启动信息
+	Host        string `json:"host"` //当前机器名
+	Name        string `json:"name"` //服务名称
+	clusterName string
+	RestartUrl  string `json:"restarturl"` //重启url
+	StopUrl     string `json:"stopurl"`    // 关闭url
+	Status      string `json:"status"`     //当前状态
+	Info        string `json:"info"`       //启动信息
 }
 
 // /**
@@ -118,6 +119,7 @@ func (self *InstanceManager) syncMoaHosts() {
 							instance.Info = ss.Children().Text()
 						case 2:
 							instance.Name = self.namefilter(ss.Children().Text())
+							instance.clusterName = ss.Children().Text()
 
 						}
 
@@ -127,6 +129,7 @@ func (self *InstanceManager) syncMoaHosts() {
 						return
 					}
 
+					instance.Info = instance.clusterName + "|" + instance.Name
 					instance.RestartUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=restart"
 					instance.StopUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=stop"
 					v, ok := instances[instance.Name]

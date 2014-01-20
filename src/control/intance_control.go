@@ -23,7 +23,6 @@ func InitControl() *InstanceControl {
 		/**
 		 * 过滤掉redis 和solr
 		 */
-
 		return strings.Contains(instance.Name, "redis") ||
 			strings.Contains(instance.Name, "solr-shard")
 	})
