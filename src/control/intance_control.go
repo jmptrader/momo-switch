@@ -23,8 +23,8 @@ func InitControl() *InstanceControl {
 		/**
 		 * 过滤掉redis 和solr
 		 */
-		return strings.Contains(instance.Name, "redis") ||
-			strings.Contains(instance.Name, "solr-shard")
+		return strings.Contains(instance.clusterName, "redis") ||
+			strings.Contains(instance.clusterName, "solr-shard")
 	})
 	manager.ScheduleInitHosts()
 	managers["moa"] = manager
@@ -42,7 +42,7 @@ func InitControl() *InstanceControl {
 		/**
 		 * 过滤掉redis 和solr
 		 */
-		return !strings.Contains(instance.Name, "solr")
+		return !strings.Contains(instance.clusterName, "solr")
 
 	})
 	manager.ScheduleInitHosts()

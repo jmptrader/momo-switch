@@ -119,6 +119,7 @@ func (self *InstanceManager) syncMoaHosts() {
 							instance.Info = ss.Children().Text()
 						case 2:
 							instance.Name = ss.Children().Text()
+							instance.clusterName = self.namefilter(instance.Name)
 						}
 
 					})
@@ -126,22 +127,20 @@ func (self *InstanceManager) syncMoaHosts() {
 					//拼接info信息
 					instance.Info = instance.Name + "|" + instance.Info
 
-					instance.Name = self.namefilter(instance.Name)
-
 					if len(instance.Name) <= 0 || self.filter(instance) {
 						return
 					}
 
 					instance.RestartUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=restart"
 					instance.StopUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=stop"
-					v, ok := instances[instance.Name]
+					v, ok := instances[instance.clusterName]
 					if !ok {
 						v = make([]SupervisorInstance, 0)
 
 					}
 
 					// //将该节点推送
-					instances[instance.Name] = append(v, instance)
+					instances[instance.clusterName] = append(v, instance)
 					// jsonStr, _ := json.Marshal(instance)
 					//fmt.Println("______________" + string(jsonStr) + "-----------------" + strconv.Itoa(v.Len()))
 
