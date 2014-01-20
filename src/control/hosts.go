@@ -124,7 +124,7 @@ func (self *InstanceManager) syncMoaHosts() {
 					})
 
 					//拼接info信息
-					instance.Status = instance.Name + " " + instance.Status
+					instance.Info = instance.Name + "|" + instance.Info
 
 					instance.Name = self.namefilter(instance.Name)
 
