@@ -118,18 +118,20 @@ func (self *InstanceManager) syncMoaHosts() {
 						case 1:
 							instance.Info = ss.Children().Text()
 						case 2:
-							instance.Name = self.namefilter(ss.Children().Text())
-							instance.clusterName = ss.Children().Text()
-
+							instance.Name = ss.Children().Text()
 						}
 
 					})
+
+					//拼接info信息
+					instance.Status = instance.Name + " " + instance.Status
+
+					instance.Name = self.namefilter(instance.Name)
 
 					if len(instance.Name) <= 0 || self.filter(instance) {
 						return
 					}
 
-					instance.Info = instance.clusterName + "|" + instance.Name
 					instance.RestartUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=restart"
 					instance.StopUrl = baseUrl + "/index.html?processname=" + instance.Name + "&amp;action=stop"
 					v, ok := instances[instance.Name]
