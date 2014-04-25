@@ -52,12 +52,11 @@ func (self *RadaGoRedis) HandleLocationNotifySwitchQ(resp http.ResponseWriter, r
 	//好友雷达日志开关
 	switch_on_radar_log_bool := self.zkmanager.Get(SWITCH_ON_RADAR_LOG)
 
-
 	tags := []OpTag{
 		OpTag{Label: "switchOn_friend_radar", Status: SWITCH_ON_RADAR_bool},
 		OpTag{Label: "switchOn_GoRedis", Status: !switchOff_GoRedis_bool},
 		OpTag{Label: "switchOn_GoRedis_Read", Status: switchOn_GoRedis_Read_bool},
-		OpTag{Label: "switchOn_radar_log", Status: switch_on_radar_log_bool}
+		OpTag{Label: "switchOn_radar_log", Status: switch_on_radar_log_bool},
 	}
 
 	status, _ := json.Marshal(tags)
@@ -91,8 +90,7 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_RADAR, switchOn_friend_radar)
 	}
 
-
-	if len(switchOn_radar_log) >0{
+	if len(switchOn_radar_log) > 0 {
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_RADAR_LOG, switchOn_radar_log)
 	}
 
