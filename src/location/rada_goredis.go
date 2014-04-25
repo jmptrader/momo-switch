@@ -13,6 +13,7 @@ const (
 	SWITCH_OFF_GOREDIS     = "/switch/location_notify/switchOff_GoRedis"
 	SWITCH_ON_GOREDIS_READ = "/switch/location_notify/switchOn_GoRedis_Read"
 	SWITCH_ON_RADAR        = "/switch/location_notify/switchOn_friend_radar"
+	SWITCH_ON_RADAR_LOG    = "/switch/location_notify/switchOn_friend_radar_record"
 )
 
 type OpTag struct {
@@ -30,8 +31,9 @@ func NewRadaGoRedis(zkmanager *zkmanager.ZKManager) *RadaGoRedis {
 	zkmanager.TraverseCreatePath(SWITCH_OFF_GOREDIS, "true")
 	zkmanager.TraverseCreatePath(SWITCH_ON_GOREDIS_READ, "false")
 	zkmanager.TraverseCreatePath(SWITCH_ON_RADAR, "true")
+	zkmanager.TraverseCreatePath(SWITCH_ON_RADAR_LOG, "true")
 
-	for _, v := range []string{SWITCH_OFF_GOREDIS, SWITCH_ON_GOREDIS_READ, SWITCH_ON_RADAR} {
+	for _, v := range []string{SWITCH_OFF_GOREDIS, SWITCH_ON_GOREDIS_READ, SWITCH_ON_RADAR, SWITCH_ON_RADAR_LOG} {
 		data := zkmanager.Get(v)
 		fmt.Printf("获取[%s]数据成功!data:[%b]\n", v, data)
 	}
@@ -45,12 +47,18 @@ func (self *RadaGoRedis) HandleLocationNotifySwitchQ(resp http.ResponseWriter, r
 
 	switchOn_GoRedis_Read_bool := self.zkmanager.Get(SWITCH_ON_GOREDIS_READ)
 
-	SWITCH_ON_RADAR__bool := self.zkmanager.Get(SWITCH_ON_RADAR)
+	SWITCH_ON_RADAR_bool := self.zkmanager.Get(SWITCH_ON_RADAR)
+
+	//好友雷达日志开关
+	switch_on_radar_log_bool := self.zkmanager.Get(SWITCH_ON_RADAR_LOG)
+
 
 	tags := []OpTag{
-		OpTag{Label: "switchOn_friend_radar", Status: SWITCH_ON_RADAR__bool},
+		OpTag{Label: "switchOn_friend_radar", Status: SWITCH_ON_RADAR_bool},
 		OpTag{Label: "switchOn_GoRedis", Status: !switchOff_GoRedis_bool},
-		OpTag{Label: "switchOn_GoRedis_Read", Status: switchOn_GoRedis_Read_bool}}
+		OpTag{Label: "switchOn_GoRedis_Read", Status: switchOn_GoRedis_Read_bool},
+		OpTag{Label: "switchOn_radar_log", Status: switch_on_radar_log_bool}
+	}
 
 	status, _ := json.Marshal(tags)
 
@@ -63,6 +71,7 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 	switchOn_GoRedis := req.FormValue("switchOn_GoRedis")
 	switchOn_GoRedis_Read := req.FormValue("switchOn_GoRedis_Read")
 	switchOn_friend_radar := req.FormValue("switchOn_friend_radar")
+	switchOn_radar_log := req.FormValue("switchOn_radar_log")
 
 	succ := false
 	reponse := &entry.Response{}
@@ -80,6 +89,11 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 	//是否打开好友雷达
 	if len(switchOn_friend_radar) > 0 {
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_RADAR, switchOn_friend_radar)
+	}
+
+
+	if len(switchOn_radar_log) >0{
+		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_RADAR_LOG, switchOn_radar_log)
 	}
 
 	if succ {
