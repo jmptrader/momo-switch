@@ -56,7 +56,7 @@ func NewRadaGoRedis(zkmanager *zkmanager.ZKManager) *RadaGoRedis {
 
 func (self *RadaGoRedis) HandleLocationNotifySwitchQ(resp http.ResponseWriter, req *http.Request) {
 
-	switchOff_GoReDdis_bool := self.zkmanager.Get(SWITCH_OFF_GOREDIS)
+	switchOff_GoRedis_bool := self.zkmanager.Get(SWITCH_OFF_GOREDIS)
 
 	switchOn_GoRedis_Read_bool := self.zkmanager.Get(SWITCH_ON_GOREDIS_READ)
 
@@ -74,9 +74,8 @@ func (self *RadaGoRedis) HandleLocationNotifySwitchQ(resp http.ResponseWriter, r
 		OpTag{Label: "switchOn_GoRedis", Status: !switchOff_GoRedis_bool},
 		OpTag{Label: "switchOn_GoRedis_Read", Status: switchOn_GoRedis_Read_bool},
 		OpTag{Label: "switchOn_radar_log", Status: switch_on_radar_log_bool},
-		OpTag{Label:"switch_on_feed_v2",Status:switch_on_feed_v2},
-		OpTag{Label:"switch_on_geo_update_credit",Status:switch_on_geo_update_credit}
-	}
+		OpTag{Label: "switch_on_feed_v2", Status: switch_on_feed_v2},
+		OpTag{Label: "switch_on_geo_update_credit", Status: switch_on_geo_update_credit}}
 
 	status, _ := json.Marshal(tags)
 
@@ -111,19 +110,18 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_RADAR, switchOn_friend_radar)
 	}
 
-
 	//是否打开好友雷达日志
 	if len(switchOn_radar_log) > 0 {
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_RADAR_LOG, switchOn_radar_log)
 	}
 
 	//是否打开留言板v2即：留言板有关注和关注群组的feed
-	if len(switchOn_Feed_v2) >0{
-		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_FEED_V2, switchOn_Feed_v2 )
+	if len(switchOn_Feed_v2) > 0 {
+		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_FEED_V2, switchOn_Feed_v2)
 	}
 
 	//打开geo_update的用户信用等级
-	if len(switchOn_geo_update_credit)>0{
+	if len(switchOn_geo_update_credit) > 0 {
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_GEO_UPDATE_CREDIT, switchOn_geo_update_credit)
 	}
 
