@@ -23,6 +23,8 @@ const (
 	SWITCH_ON_FEED_V2 = "/switch/feed/v2_switch"
 	//附近列表用户信用等级开关
 	SWITCH_ON_GEO_UPDATE_CREDIT = "/switch/geo_update/credit_switch"
+
+	SWITCH_ON_GEO_SEARCH_V2 = "/switch/geo_search/v2_switch"
 )
 
 type OpTag struct {
@@ -42,7 +44,8 @@ func NewRadaGoRedis(zkmanager *zkmanager.ZKManager) *RadaGoRedis {
 		{SWITCH_ON_RADAR, "true"},
 		{SWITCH_ON_RADAR_LOG, "true"},
 		{SWITCH_ON_FEED_V2, "true"},
-		{SWITCH_ON_GEO_UPDATE_CREDIT, "true"}}
+		{SWITCH_ON_GEO_UPDATE_CREDIT, "true"},
+		SWITCH_ON_GEO_SEARCH_V2, "true"}
 
 	for _, v := range switches {
 		//创建节点
@@ -69,13 +72,16 @@ func (self *RadaGoRedis) HandleLocationNotifySwitchQ(resp http.ResponseWriter, r
 
 	switch_on_geo_update_credit := self.zkmanager.Get(SWITCH_ON_GEO_UPDATE_CREDIT)
 
+	switch_on_geo_search := self.zkmanager.Get(SWITCH_ON_GEO_SEARCH_V2)
+
 	tags := []OpTag{
 		OpTag{Label: "switchOn_friend_radar", Status: SWITCH_ON_RADAR_bool},
 		OpTag{Label: "switchOn_GoRedis", Status: !switchOff_GoRedis_bool},
 		OpTag{Label: "switchOn_GoRedis_Read", Status: switchOn_GoRedis_Read_bool},
 		OpTag{Label: "switchOn_radar_log", Status: switch_on_radar_log_bool},
 		OpTag{Label: "switch_on_feed_v2", Status: switch_on_feed_v2},
-		OpTag{Label: "switch_on_geo_update_credit", Status: switch_on_geo_update_credit}}
+		OpTag{Label: "switch_on_geo_update_credit", Status: switch_on_geo_update_credit}
+		OpTag{Label:"switch_on_geo_search",Status:switch_on_geo_search}}
 
 	status, _ := json.Marshal(tags)
 
@@ -91,6 +97,9 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 	switchOn_radar_log := req.FormValue("switchOn_radar_log")
 	switchOn_Feed_v2 := req.FormValue("switch_on_feed_v2")
 	switchOn_geo_update_credit := req.FormValue("switch_on_geo_update_credit")
+
+	switchOn_geo_search := req.FormValue("switch_on_geo_search")
+		
 
 	succ := false
 	reponse := &entry.Response{}
@@ -123,6 +132,10 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 	//打开geo_update的用户信用等级
 	if len(switchOn_geo_update_credit) > 0 {
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_GEO_UPDATE_CREDIT, switchOn_geo_update_credit)
+	}
+
+	if len(switchOn_geo_search)>0{
+		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_GEO_SEARCH_V2, switchOn_geo_search)
 	}
 
 	if succ {
