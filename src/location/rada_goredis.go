@@ -45,7 +45,7 @@ func NewRadaGoRedis(zkmanager *zkmanager.ZKManager) *RadaGoRedis {
 		{SWITCH_ON_RADAR_LOG, "true"},
 		{SWITCH_ON_FEED_V2, "true"},
 		{SWITCH_ON_GEO_UPDATE_CREDIT, "true"},
-		SWITCH_ON_GEO_SEARCH_V2, "true"}
+		{SWITCH_ON_GEO_SEARCH_V2, "true"}}
 
 	for _, v := range switches {
 		//创建节点
