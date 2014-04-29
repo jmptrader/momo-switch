@@ -80,8 +80,8 @@ func (self *RadaGoRedis) HandleLocationNotifySwitchQ(resp http.ResponseWriter, r
 		OpTag{Label: "switchOn_GoRedis_Read", Status: switchOn_GoRedis_Read_bool},
 		OpTag{Label: "switchOn_radar_log", Status: switch_on_radar_log_bool},
 		OpTag{Label: "switch_on_feed_v2", Status: switch_on_feed_v2},
-		OpTag{Label: "switch_on_geo_update_credit", Status: switch_on_geo_update_credit}
-		OpTag{Label:"switch_on_geo_search",Status:switch_on_geo_search}}
+		OpTag{Label: "switch_on_geo_update_credit", Status: switch_on_geo_update_credit},
+		OpTag{Label: "switch_on_geo_search", Status: switch_on_geo_search}}
 
 	status, _ := json.Marshal(tags)
 
@@ -99,7 +99,6 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 	switchOn_geo_update_credit := req.FormValue("switch_on_geo_update_credit")
 
 	switchOn_geo_search := req.FormValue("switch_on_geo_search")
-		
 
 	succ := false
 	reponse := &entry.Response{}
@@ -134,7 +133,7 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_GEO_UPDATE_CREDIT, switchOn_geo_update_credit)
 	}
 
-	if len(switchOn_geo_search)>0{
+	if len(switchOn_geo_search) > 0 {
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_GEO_SEARCH_V2, switchOn_geo_search)
 	}
 
