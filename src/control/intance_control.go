@@ -31,7 +31,7 @@ func InitControl() *InstanceControl {
 
 	fmt.Println("初始化moa机器成功........")
 
-	manager = NewManager("solr", func(name string) string {
+	manager = NewManager("search", func(name string) string {
 		cluster := strings.Split(name, "-shard")[0]
 		if strings.Contains(cluster, "backup") {
 			cluster = strings.Split(cluster, "-backup")[0]
