@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"ex",
+				"expired_date"
+			],
+			[
+				"tab",
+				"tab_name"
+			],
+			[
+				"De",
+				"DECLARE"
+			],
+			[
+				"e",
+				"EXISTS"
+			],
+			[
+				"T",
+				"TEMPORARY"
+			],
+			[
+				"id",
+				"id_stmt"
+			],
+			[
+				"TO",
+				"TOTAL_LIST"
+			],
+			[
+				"pr",
+				"PREPARE"
+			],
+			[
+				"sel",
+				"SELECT"
+			],
+			[
+				"TMP",
+				"TMP_NAME"
+			],
+			[
+				"int",
+				"int"
+			],
+			[
+				"TM",
+				"TMP_NAME"
+			],
+			[
+				"TOTAL",
+				"TOTAL_EXP"
+			],
+			[
+				"to",
+				"total"
+			],
+			[
+				"tota",
+				"total_stmt"
+			],
+			[
+				"set",
+				"SET"
+			],
+			[
 				"han",
 				"HandleFunc	 ƒ"
 			],
@@ -144,10 +208,6 @@
 				"Printf	n int, err error ƒ"
 			],
 			[
-				"set",
-				"SetFillCache	 ƒ"
-			],
-			[
 				"File",
 				"FileMode	uint32 ʈ"
 			],
@@ -280,10 +340,6 @@
 				"WriteHeader	 ƒ"
 			],
 			[
-				"to",
-				"touser	string ν"
-			],
-			[
 				"for",
 				"FormFile	multipart.File, *multipart.FileHeader, error ƒ"
 			],
@@ -312,10 +368,6 @@
 				"Location_Y	float64 ν"
 			],
 			[
-				"pr",
-				"Println	n int, err error ƒ"
-			],
-			[
 				"ms",
 				"MsgType	string ν"
 			],
@@ -325,10 +377,6 @@
 			],
 			[
 				"tx",
-				"TxtResponse	struct ʈ"
-			],
-			[
-				"T",
 				"TxtResponse	struct ʈ"
 			],
 			[
@@ -404,10 +452,6 @@
 				"Attr	string ƒ"
 			],
 			[
-				"e",
-				"Each	 ƒ"
-			],
-			[
 				"E",
 				"Eq	goquery.Nodes ƒ"
 			],
@@ -470,50 +514,6 @@
 			[
 				"vale",
 				"Value	struct ʈ"
-			],
-			[
-				"me",
-				"MethodByName	reflect.Value ƒ"
-			],
-			[
-				"Meh",
-				"MethodByName	reflect.Value ƒ"
-			],
-			[
-				"Tr",
-				"TrimRight	string ƒ"
-			],
-			[
-				"lis",
-				"ListenTCP	*net.TCPListener, error ƒ"
-			],
-			[
-				"Lis",
-				"ListenTCP	*net.TCPListener, error ƒ"
-			],
-			[
-				"rea",
-				"Read	n int, err error ƒ"
-			],
-			[
-				"Tcp",
-				"TCPConn	struct ʈ"
-			],
-			[
-				"Pr",
-				"Println	 ƒ"
-			],
-			[
-				"li",
-				"ListenTCP	*net.TCPListener, error ƒ"
-			],
-			[
-				"file",
-				"file	os.FileInfo ν"
-			],
-			[
-				"fil",
-				"FileMode	uint32 ʈ"
 			]
 		]
 	},
@@ -547,7 +547,7 @@
 			"file": "src/location/rada_goredis.go",
 			"settings":
 			{
-				"buffer_size": 3095,
+				"buffer_size": 4409,
 				"line_ending": "Unix"
 			}
 		}
@@ -796,6 +796,8 @@
 	},
 	"file_history":
 	[
+		"/Users/Xmx/Dropbox/clear_md5.sql",
+		"/Users/Xmx/Desktop/clear_md5.sql",
 		"/Users/Xmx/workspace/github/momo-switch/src/test.go",
 		"/Users/Xmx/workspace/github/momo-switch/src/main.go",
 		"/Users/Xmx/workspace/github/momo-switch/src/switch.go",
@@ -921,9 +923,7 @@
 		"/Users/Xmx/workspace/google/cgss/src/com.blackbeans/main/demo.go",
 		"/usr/local/go/src/pkg/net/rpc/server.go",
 		"/usr/local/go/src/pkg/bufio/bufio.go",
-		"/usr/local/go/src/pkg/net/fd.go",
-		"/Users/Xmx/workspace/google/cgss/dic/dic-demo.txt",
-		"/Users/Xmx/workspace/google/cgss/src/com.blackbeans/main/main.go"
+		"/usr/local/go/src/pkg/net/fd.go"
 	],
 	"find":
 	{
@@ -942,6 +942,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"tmp_name",
+			"cursor",
+			"CURSOR",
+			"cursor",
+			"cusor",
 			" :=",
 			"in",
 			"hostType",
@@ -1622,8 +1627,8 @@
 						"selection":
 						[
 							[
-								168,
-								168
+								2602,
+								2602
 							]
 						],
 						"settings":
@@ -1872,7 +1877,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1809.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1882,15 +1887,15 @@
 					"file": "src/location/rada_goredis.go",
 					"settings":
 					{
-						"buffer_size": 3095,
+						"buffer_size": 4409,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								621,
-								621
+								0,
+								0
 							]
 						],
 						"settings":

@@ -25,6 +25,8 @@ const (
 	SWITCH_ON_GEO_UPDATE_CREDIT = "/switch/geo_update/credit_switch"
 
 	SWITCH_ON_GEO_SEARCH_V2 = "/switch/geo_search/v2_switch"
+
+	SWITCH_ON_GEO_ASYN_UPDATE = "/switch/geo_update/async_update"
 )
 
 type OpTag struct {
@@ -74,6 +76,8 @@ func (self *RadaGoRedis) HandleLocationNotifySwitchQ(resp http.ResponseWriter, r
 
 	switch_on_geo_search := self.zkmanager.Get(SWITCH_ON_GEO_SEARCH_V2)
 
+	switch_on_geo_async_update := self.zkmanager.Get(SWITCH_ON_GEO_ASYN_UPDATE)
+
 	tags := []OpTag{
 		OpTag{Label: "switchOn_friend_radar", Status: SWITCH_ON_RADAR_bool},
 		OpTag{Label: "switchOn_GoRedis", Status: !switchOff_GoRedis_bool},
@@ -81,7 +85,8 @@ func (self *RadaGoRedis) HandleLocationNotifySwitchQ(resp http.ResponseWriter, r
 		OpTag{Label: "switchOn_radar_log", Status: switch_on_radar_log_bool},
 		OpTag{Label: "switch_on_feed_v2", Status: switch_on_feed_v2},
 		OpTag{Label: "switch_on_geo_update_credit", Status: switch_on_geo_update_credit},
-		OpTag{Label: "switch_on_geo_search", Status: switch_on_geo_search}}
+		OpTag{Label: "switch_on_geo_search", Status: switch_on_geo_search},
+		OpTag{Label: "switch_on_geo_async_update", Status: switch_on_geo_async_update}}
 
 	status, _ := json.Marshal(tags)
 
@@ -99,6 +104,7 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 	switchOn_geo_update_credit := req.FormValue("switch_on_geo_update_credit")
 
 	switchOn_geo_search := req.FormValue("switch_on_geo_search")
+	switch_on_geo_async_update := req.FormValue("switch_on_geo_async_update")
 
 	succ := false
 	reponse := &entry.Response{}
@@ -135,6 +141,10 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 
 	if len(switchOn_geo_search) > 0 {
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_GEO_SEARCH_V2, switchOn_geo_search)
+	}
+
+	if len(switch_on_geo_async_update) > 0 {
+		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_GEO_ASYN_UPDATE, switch_on_geo_async_update)
 	}
 
 	if succ {
