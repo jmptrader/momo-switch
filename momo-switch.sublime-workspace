@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"SWi",
+				"SWITCH_ON_GEO_ASYN_UPDATE	 Ɩ"
+			],
+			[
+				"re",
+				"req	*http.Request ν"
+			],
+			[
 				"ex",
 				"expired_date"
 			],
@@ -150,10 +158,6 @@
 			[
 				"I",
 				"IInstanceFilter	interface ¡"
-			],
-			[
-				"re",
-				"resp	http.ResponseWriter ν"
 			],
 			[
 				"u",
@@ -510,44 +514,16 @@
 			[
 				"fu",
 				"func	Function"
-			],
-			[
-				"vale",
-				"Value	struct ʈ"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "src/control/intance_control.go",
+			"file": "src/zkmanager/zk_client.go",
 			"settings":
 			{
-				"buffer_size": 1842,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/control/hosts.go",
-			"settings":
-			{
-				"buffer_size": 3832,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/main.go",
-			"settings":
-			{
-				"buffer_size": 3277,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/location/rada_goredis.go",
-			"settings":
-			{
-				"buffer_size": 4409,
+				"buffer_size": 1521,
 				"line_ending": "Unix"
 			}
 		}
@@ -779,7 +755,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 521.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -796,134 +772,134 @@
 	},
 	"file_history":
 	[
-		"/Users/Xmx/Dropbox/clear_md5.sql",
-		"/Users/Xmx/Desktop/clear_md5.sql",
-		"/Users/Xmx/workspace/github/momo-switch/src/test.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/main.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/switch.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/control/hosts.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/control/moa_hosts_test.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/control/moa_hosts.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/control/moa_control.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/control/solr_control.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/contorl/moa_hosts_test.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/moa/moa_hosts.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/moa/moa_control.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/contorl/moa_control.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/contorl/moa_hosts.go",
-		"/Users/Xmx/workspace/github/momo-switch/src/util/zset.go",
-		"/Users/Xmx/workspace/github/levelDb-Demo/src/main.go",
-		"/Users/Xmx/workspace/github/levelDb-Demo/src/github.com/jmhodges/levigo/options.go",
-		"/Users/Xmx/workspace/github/GoRedis/goredis_server/libs/levelredis/level_redis.go",
-		"/Users/Xmx/workspace/github/levelDb-Demo/src/github.com/jmhodges/levigo/db.go",
-		"/Users/Xmx/workspace/github/levelDb-Demo/levelDb-demo.sublime-project",
+		"/Users/blackbeans/workspace/github/momo-switch/src/location/rada_goredis.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/main.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/control/hosts.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/control/intance_control.go",
+		"/Users/blackbeans/Dropbox/clear_md5.sql",
+		"/Users/blackbeans/Desktop/clear_md5.sql",
+		"/Users/blackbeans/workspace/github/momo-switch/src/test.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/main.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/switch.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/control/hosts.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/control/moa_hosts_test.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/control/moa_hosts.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/control/moa_control.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/control/solr_control.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/contorl/moa_hosts_test.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/moa/moa_hosts.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/moa/moa_control.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/contorl/moa_control.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/contorl/moa_hosts.go",
+		"/Users/blackbeans/workspace/github/momo-switch/src/util/zset.go",
+		"/Users/blackbeans/workspace/github/levelDb-Demo/src/main.go",
+		"/Users/blackbeans/workspace/github/levelDb-Demo/src/github.com/jmhodges/levigo/options.go",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis_server/libs/levelredis/level_redis.go",
+		"/Users/blackbeans/workspace/github/levelDb-Demo/src/github.com/jmhodges/levigo/db.go",
+		"/Users/blackbeans/workspace/github/levelDb-Demo/levelDb-demo.sublime-project",
 		"/usr/local/go/src/pkg/os/path.go",
 		"/usr/local/go/src/pkg/os/types.go",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/GoSublime/CHANGELOG.md",
-		"/Users/Xmx/workspace/github/GoRedis/goredis_server/go_redis_server.go",
-		"/Users/Xmx/workspace/github/GoRedis/goredis/redis_server.go",
-		"/Users/Xmx/workspace/github/GoRedis/goredis_server/go_redis_server_zset.go",
-		"/Users/Xmx/workspace/github/GoRedis/goredis_server/libs/levelredis/level_zset.go",
-		"/Users/Xmx/workspace/github/GoRedis/goredis_server/libs/levelredis/level_redis_test.go",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/GoSublime/CHANGELOG.md",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis_server/go_redis_server.go",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis/redis_server.go",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis_server/go_redis_server_zset.go",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis_server/libs/levelredis/level_zset.go",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis_server/libs/levelredis/level_redis_test.go",
 		"/usr/local/go/src/pkg/strconv/atof.go",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/User/SFTP.sublime-settings",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/SFTP/SFTP.sublime-settings",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/User/SFTP.sublime-settings",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/SFTP/SFTP.sublime-settings",
 		"/usr/local/go/src/pkg/flag/flag.go",
-		"/Users/Xmx/workspace/github/GoRedis/goredis_server/slave_session.go",
-		"/Users/Xmx/workspace/github/GoRedis/goredis_server/slave_session_client.go",
-		"/Users/Xmx/workspace/github/GoRedis/goredis_server/slave_session_server.go",
-		"/Users/Xmx/workspace/github/GoRedis/main/goredis-server.go",
-		"/Users/Xmx/workspace/github/GoRedis/goredis/command.go",
-		"/Users/Xmx/workspace/github/GoRedis/main/goredis-slaveof.go",
-		"/Users/Xmx/workspace/github/GoRedis/main/tool/slaveof/slaveof.go",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/CTags/CTags.sublime-settings",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/User/CTags.sublime-settings",
-		"/Users/Xmx/workspace/github/GoRedis/goredis_server/sftp-config.json",
-		"/Users/Xmx/Downloads/b/fuck",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/GoSublime/USAGE.md",
-		"/Users/Xmx/Desktop/momodatasource-1.1.8.2-20131115.030337-4/redis-datasource.properties",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/MemIndexMap.java.dump",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/MmapFile.java",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/MmapManager.java.dump",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/MemBucket.java",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/MemBucket.java.dump",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/MemIndexMap.java",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/MmapManager.java",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/MmapTest.java.dump",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/MmapUtils.java",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/Mmap.java.dump",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/MmapTest.java",
-		"/Users/Xmx/workspace/github/mcache/src/org/zq/mmap/Mmap.java",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/1.https:::svn.wemomo.com:svn:server:service:moa-se",
-		"/Users/Xmx/Downloads/tools/mat/MemoryAnalyzer.app/Contents/MacOS/MemoryAnalyzer.ini",
-		"/Users/Xmx/Desktop/area.csv",
-		"/Users/Xmx/Desktop/TB_Area.sql",
-		"/Users/Xmx/Desktop/地区表创建及初始数据导入.sql",
-		"/Users/Xmx/Desktop/工作安排.txt",
-		"/Users/Xmx/workspace/immomo/service/moa-service/user-service/trunk/user-service-impl/src/main/resources/张艳魁：",
-		"/Users/Xmx/workspace/immomo/service/moa-service/user-service/trunk/user-service-impl/src/main/resources/start.sh",
-		"/Users/Xmx/Downloads/dying.txt",
-		"/Users/Xmx/Downloads/momo_setting_dev.php",
-		"/Users/Xmx/workspace/immomo/service/moa-service/sso-service/trunk/doc/shell/restorecity.sh",
-		"/Users/Xmx/workspace/immomo/service/moa-service/sso-service/trunk/src/main/resources/restorecity.sh",
-		"/Users/Xmx/Desktop/泰国行程初稿.txt",
-		"/Users/Xmx/workspace/google/python-geohash/test/test_uint64.py",
-		"/Users/Xmx/workspace/google/python-geohash/jpgrid.py",
-		"/Users/Xmx/workspace/google/python-geohash/setup.py",
-		"/Users/Xmx/workspace/google/python-geohash/jpiarea.py",
-		"/Users/Xmx/Movies/238640/奥林匹斯陷落纯特效字幕.srt",
-		"/Users/Xmx/workspace/immomo/service/moa-service/school-banner-service/trunk/school-banner-impl/src/test/resources/moa_client_tcp.properties",
-		"/Users/Xmx/workspace/immomo/service/moa-service/school-banner-service/trunk/school-banner-impl/src/main/resources/moa_client_tcp.properties",
-		"/Users/Xmx/workspace/google/tair/trunk/src/common/syncproc.hpp.dump",
-		"/Users/Xmx/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/metadata.txt",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis_server/slave_session.go",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis_server/slave_session_client.go",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis_server/slave_session_server.go",
+		"/Users/blackbeans/workspace/github/GoRedis/main/goredis-server.go",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis/command.go",
+		"/Users/blackbeans/workspace/github/GoRedis/main/goredis-slaveof.go",
+		"/Users/blackbeans/workspace/github/GoRedis/main/tool/slaveof/slaveof.go",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/CTags/CTags.sublime-settings",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/User/CTags.sublime-settings",
+		"/Users/blackbeans/workspace/github/GoRedis/goredis_server/sftp-config.json",
+		"/Users/blackbeans/Downloads/b/fuck",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/GoSublime/USAGE.md",
+		"/Users/blackbeans/Desktop/momodatasource-1.1.8.2-20131115.030337-4/redis-datasource.properties",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/MemIndexMap.java.dump",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/MmapFile.java",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/MmapManager.java.dump",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/MemBucket.java",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/MemBucket.java.dump",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/MemIndexMap.java",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/MmapManager.java",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/MmapTest.java.dump",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/MmapUtils.java",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/Mmap.java.dump",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/MmapTest.java",
+		"/Users/blackbeans/workspace/github/mcache/src/org/zq/mmap/Mmap.java",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/1.https:::svn.wemomo.com:svn:server:service:moa-se",
+		"/Users/blackbeans/Downloads/tools/mat/MemoryAnalyzer.app/Contents/MacOS/MemoryAnalyzer.ini",
+		"/Users/blackbeans/Desktop/area.csv",
+		"/Users/blackbeans/Desktop/TB_Area.sql",
+		"/Users/blackbeans/Desktop/地区表创建及初始数据导入.sql",
+		"/Users/blackbeans/Desktop/工作安排.txt",
+		"/Users/blackbeans/workspace/immomo/service/moa-service/user-service/trunk/user-service-impl/src/main/resources/张艳魁：",
+		"/Users/blackbeans/workspace/immomo/service/moa-service/user-service/trunk/user-service-impl/src/main/resources/start.sh",
+		"/Users/blackbeans/Downloads/dying.txt",
+		"/Users/blackbeans/Downloads/momo_setting_dev.php",
+		"/Users/blackbeans/workspace/immomo/service/moa-service/sso-service/trunk/doc/shell/restorecity.sh",
+		"/Users/blackbeans/workspace/immomo/service/moa-service/sso-service/trunk/src/main/resources/restorecity.sh",
+		"/Users/blackbeans/Desktop/泰国行程初稿.txt",
+		"/Users/blackbeans/workspace/google/python-geohash/test/test_uint64.py",
+		"/Users/blackbeans/workspace/google/python-geohash/jpgrid.py",
+		"/Users/blackbeans/workspace/google/python-geohash/setup.py",
+		"/Users/blackbeans/workspace/google/python-geohash/jpiarea.py",
+		"/Users/blackbeans/Movies/238640/奥林匹斯陷落纯特效字幕.srt",
+		"/Users/blackbeans/workspace/immomo/service/moa-service/school-banner-service/trunk/school-banner-impl/src/test/resources/moa_client_tcp.properties",
+		"/Users/blackbeans/workspace/immomo/service/moa-service/school-banner-service/trunk/school-banner-impl/src/main/resources/moa_client_tcp.properties",
+		"/Users/blackbeans/workspace/google/tair/trunk/src/common/syncproc.hpp.dump",
+		"/Users/blackbeans/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/metadata.txt",
 		"/opt/data/solr/shard0/solr/users1/conf/schema.xml",
-		"/Users/Xmx/workspace/google/weixin/src/tcp_tw_recycle",
+		"/Users/blackbeans/workspace/google/weixin/src/tcp_tw_recycle",
 		"/usr/local/go/src/pkg/net/http/httputil/persist.go",
 		"/usr/local/go/src/pkg/io/io.go",
-		"/Users/Xmx/Desktop/fuck.txt",
-		"/Users/Xmx/workspace/google/weixin/src/wxid.jpg",
-		"/Users/Xmx/workspace/google/weixin/src/weixin.go",
-		"/Users/Xmx/workspace/google/weixin/.gitignore",
-		"/Users/Xmx/workspace/google/weixin/src/crawler2.go",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/User/GoSublime.sublime-settings",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/GoSublime/GoSublime.sublime-settings",
-		"/Users/Xmx/workspace/google/weixin/src/build.png",
-		"/Users/Xmx/workspace/google/weixin/src/entry/entry.go",
+		"/Users/blackbeans/Desktop/fuck.txt",
+		"/Users/blackbeans/workspace/google/weixin/src/wxid.jpg",
+		"/Users/blackbeans/workspace/google/weixin/src/weixin.go",
+		"/Users/blackbeans/workspace/google/weixin/.gitignore",
+		"/Users/blackbeans/workspace/google/weixin/src/crawler2.go",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/User/GoSublime.sublime-settings",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/GoSublime/GoSublime.sublime-settings",
+		"/Users/blackbeans/workspace/google/weixin/src/build.png",
+		"/Users/blackbeans/workspace/google/weixin/src/entry/entry.go",
 		"/usr/local/go/src/pkg/net/http/doc.go",
 		"/usr/local/go/src/pkg/net/http/server.go",
-		"/Users/Xmx/workspace/google/weixin/src/start.sh",
-		"/Users/Xmx/workspace/google/weixin/src/main.go",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/Git/Git.sublime-settings",
-		"/Users/Xmx/workspace/google/weixin/src/entry/main.go",
-		"/Users/Xmx/workspace/google/weixin/weixin.sublime-project",
-		"/Users/Xmx/workspace/google/cgss/src/com.blackbeans/main/weixin/entry.go",
-		"/Users/Xmx/workspace/google/cgss/src/com.blackbeans/main/weixin/meishi.go",
-		"/Users/Xmx/workspace/google/cgss/src/com.blackbeans/main/weixin/crawler2.go",
+		"/Users/blackbeans/workspace/google/weixin/src/start.sh",
+		"/Users/blackbeans/workspace/google/weixin/src/main.go",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/Git/Git.sublime-settings",
+		"/Users/blackbeans/workspace/google/weixin/src/entry/main.go",
+		"/Users/blackbeans/workspace/google/weixin/weixin.sublime-project",
+		"/Users/blackbeans/workspace/google/cgss/src/com.blackbeans/main/weixin/entry.go",
+		"/Users/blackbeans/workspace/google/cgss/src/com.blackbeans/main/weixin/meishi.go",
+		"/Users/blackbeans/workspace/google/cgss/src/com.blackbeans/main/weixin/crawler2.go",
 		"/usr/local/go/src/pkg/net/http/httputil/reverseproxy.go",
 		"/usr/local/go/src/pkg/net/http/client.go",
-		"/Users/Xmx/workspace/google/cgss/src/com.blackbeans/main/test.go",
+		"/Users/blackbeans/workspace/google/cgss/src/com.blackbeans/main/test.go",
 		"/usr/local/go/src/pkg/fmt/print.go",
-		"/Users/Xmx/Desktop/wx_sample.php",
+		"/Users/blackbeans/Desktop/wx_sample.php",
 		"/usr/local/go/src/pkg/time/time.go",
 		"/usr/local/go/src/pkg/strconv/itoa.go",
 		"/usr/local/go/src/pkg/github.com/garyburd/go-mongo/mongo/database.go",
-		"/Users/Xmx/workspace/google/cgss/src/com.blackbeans/main/crawler.go",
-		"/Users/Xmx/workspace/google/cgss/src/com.blackbeans/main/photo.go",
+		"/Users/blackbeans/workspace/google/cgss/src/com.blackbeans/main/crawler.go",
+		"/Users/blackbeans/workspace/google/cgss/src/com.blackbeans/main/photo.go",
 		"/usr/local/go/src/pkg/sync/mutex.go",
-		"/Users/Xmx/Library/Application Support/Sublime Text 2/Packages/GBK Encoding Support/tmp/db_collection_conf_demo.properties                %2FUsers%2FXmx%2Fworkspace%2Fimmomo%2Flib%2Fgeo-dbrouter%2Fbranches%2F1.0.0-SNAPSHOT%2Fsrc%2Fmain%2Fresources%2Fdb_collection_conf_demo.properties",
+		"/Users/blackbeans/Library/Application Support/Sublime Text 2/Packages/GBK Encoding Support/tmp/db_collection_conf_demo.properties                %2FUsers%2Fblackbeans%2Fworkspace%2Fimmomo%2Flib%2Fgeo-dbrouter%2Fbranches%2F1.0.0-SNAPSHOT%2Fsrc%2Fmain%2Fresources%2Fdb_collection_conf_demo.properties",
 		"/usr/local/go/src/pkg/sync/runtime.go",
-		"/Users/Xmx/workspace/immomo/lib/geo-dbrouter/branches/1.0.0-SNAPSHOT/src/main/resources/db_collection_conf_demo.properties",
+		"/Users/blackbeans/workspace/immomo/lib/geo-dbrouter/branches/1.0.0-SNAPSHOT/src/main/resources/db_collection_conf_demo.properties",
 		"/usr/local/go/src/pkg/net/tcpsock_plan9.go",
 		"/usr/local/go/src/pkg/syscall/syscall.go",
 		"/usr/local/go/src/pkg/syscall/zerrors_plan9_386.go",
 		"/usr/local/go/src/pkg/net/tcpsock.go",
 		"/usr/local/go/src/pkg/net/tcpsock_posix.go",
 		"/usr/local/go/src/pkg/os/file.go",
-		"/usr/local/go/src/pkg/os/file_plan9.go",
-		"/Users/Xmx/workspace/google/cgss/src/com.blackbeans/main/demo.go",
-		"/usr/local/go/src/pkg/net/rpc/server.go",
-		"/usr/local/go/src/pkg/bufio/bufio.go",
-		"/usr/local/go/src/pkg/net/fd.go"
+		"/usr/local/go/src/pkg/os/file_plan9.go"
 	],
 	"find":
 	{
@@ -1050,7 +1026,7 @@
 			"         \"env\": {\"GOROOT\": \"${home}/workspace/google/sorter/\",\"GOPATH\":\"/usr/local/go/bin\"},",
 			"         ",
 			"sorter",
-			"\"GOPATH\": \"/Users/Xmx/workspace/google/sorter\"",
+			"\"GOPATH\": \"/Users/blackbeans/workspace/google/sorter\"",
 			"package",
 			"var infile *string = flag.\n",
 			"flag",
@@ -1078,1073 +1054,32 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/control/intance_control.go",
+					"file": "src/zkmanager/zk_client.go",
 					"settings":
 					{
-						"buffer_size": 1842,
+						"buffer_size": 1521,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								186,
-								186
+								1325,
+								1328
 							]
 						],
 						"settings":
 						{
-							"BracketHighlighterBusy": false,
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"incomplete_sync": null,
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"remote_loading": false,
-							"sublime_auto_complete": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"synced": false,
 							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/control/hosts.go",
-					"settings":
-					{
-						"buffer_size": 3832,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1632,
-								1632
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"incomplete_sync": null,
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"remote_loading": false,
-							"sublime_auto_complete": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"synced": false,
-							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1317.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/main.go",
-					"settings":
-					{
-						"buffer_size": 3277,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2602,
-								2602
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"incomplete_sync": null,
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"remote_loading": false,
-							"sublime_auto_complete": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"synced": false,
-							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1809.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/location/rada_goredis.go",
-					"settings":
-					{
-						"buffer_size": 4409,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2.0,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5.0,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10.0,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"incomplete_sync": null,
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"remote_loading": false,
-							"sublime_auto_complete": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"synced": false,
-							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 201.0,
+						"translation.y": 490.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -2183,43 +1118,47 @@
 		]
 	},
 	"menu_visible": true,
-	"output.9o:///Users/Xmx/workspace/github/levelDb-Demo/src":
+	"output.9o:///Users/blackbeans/workspace/github/levelDb-Demo/src":
 	{
 		"height": 292.0
 	},
-	"output.9o:///Users/Xmx/workspace/github/levelDb-Demo/src/util":
+	"output.9o:///Users/blackbeans/workspace/github/levelDb-Demo/src/util":
 	{
 		"height": 100.0
 	},
-	"output.9o:///Users/Xmx/workspace/github/momo-switch/src":
+	"output.9o:///Users/blackbeans/workspace/github/momo-switch/src":
 	{
 		"height": 263.0
 	},
-	"output.9o:///Users/Xmx/workspace/github/momo-switch/src/control":
+	"output.9o:///Users/blackbeans/workspace/github/momo-switch/src/control":
 	{
-		"height": 100.0
+		"height": 157.0
 	},
-	"output.9o:///Users/Xmx/workspace/google/cgss/src/com.blackbeans/main":
+	"output.9o:///Users/blackbeans/workspace/github/momo-switch/src/location":
+	{
+		"height": 112.0
+	},
+	"output.9o:///Users/blackbeans/workspace/google/cgss/src/com.blackbeans/main":
 	{
 		"height": 148.0
 	},
-	"output.9o:///Users/Xmx/workspace/google/cgss/src/com.blackbeans/main/weixin":
+	"output.9o:///Users/blackbeans/workspace/google/cgss/src/com.blackbeans/main/weixin":
 	{
 		"height": 246.0
 	},
-	"output.9o:///Users/Xmx/workspace/google/weixin":
+	"output.9o:///Users/blackbeans/workspace/google/weixin":
 	{
 		"height": 100.0
 	},
-	"output.9o:///Users/Xmx/workspace/google/weixin/entry":
+	"output.9o:///Users/blackbeans/workspace/google/weixin/entry":
 	{
 		"height": 100.0
 	},
-	"output.9o:///Users/Xmx/workspace/google/weixin/src":
+	"output.9o:///Users/blackbeans/workspace/google/weixin/src":
 	{
 		"height": 100.0
 	},
-	"output.9o:///Users/Xmx/workspace/google/weixin/src/entry":
+	"output.9o:///Users/blackbeans/workspace/google/weixin/src/entry":
 	{
 		"height": 100.0
 	},
@@ -2251,7 +1190,7 @@
 	{
 		"height": 162.0
 	},
-	"output.gscommander:///Users/Xmx/workspace/google/musicplayer/src/com.blackbeans/entry":
+	"output.gscommander:///Users/blackbeans/workspace/google/musicplayer/src/com.blackbeans/entry":
 	{
 		"height": 298.0
 	},
@@ -2283,7 +1222,7 @@
 			],
 			[
 				"",
-				"/Users/Xmx/workspace/google/golang/helloworld.go"
+				"/Users/blackbeans/workspace/google/golang/helloworld.go"
 			]
 		],
 		"width": 0.0
@@ -2295,7 +1234,7 @@
 		[
 			[
 				"",
-				"/Users/Xmx/workspace/google/sorter/sorter.sublime-project"
+				"/Users/blackbeans/workspace/google/sorter/sorter.sublime-project"
 			]
 		],
 		"width": 380.0

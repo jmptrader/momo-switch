@@ -27,6 +27,9 @@ const (
 	SWITCH_ON_GEO_SEARCH_V2 = "/switch/geo_search/v2_switch"
 
 	SWITCH_ON_GEO_ASYN_UPDATE = "/switch/geo_update/async_update"
+
+	//支付苹果打开走ec2代理的开关
+	SWITCH_ON_APPLE_REPURL = "/switch/pay/apple_receipt"
 )
 
 type OpTag struct {
@@ -47,7 +50,8 @@ func NewRadaGoRedis(zkmanager *zkmanager.ZKManager) *RadaGoRedis {
 		{SWITCH_ON_RADAR_LOG, "true"},
 		{SWITCH_ON_FEED_V2, "true"},
 		{SWITCH_ON_GEO_UPDATE_CREDIT, "true"},
-		{SWITCH_ON_GEO_SEARCH_V2, "true"}}
+		{SWITCH_ON_GEO_SEARCH_V2, "true"},
+		{SWITCH_ON_APPLE_REPURL, "true"}}
 
 	for _, v := range switches {
 		//创建节点
@@ -78,6 +82,8 @@ func (self *RadaGoRedis) HandleLocationNotifySwitchQ(resp http.ResponseWriter, r
 
 	switch_on_geo_async_update := self.zkmanager.Get(SWITCH_ON_GEO_ASYN_UPDATE)
 
+	switch_on_apple_receipt_prx := self.zkmanager.Get(SWITCH_ON_APPLE_REPURL)
+
 	tags := []OpTag{
 		OpTag{Label: "switchOn_friend_radar", Status: SWITCH_ON_RADAR_bool},
 		OpTag{Label: "switchOn_GoRedis", Status: !switchOff_GoRedis_bool},
@@ -86,7 +92,8 @@ func (self *RadaGoRedis) HandleLocationNotifySwitchQ(resp http.ResponseWriter, r
 		OpTag{Label: "switch_on_feed_v2", Status: switch_on_feed_v2},
 		OpTag{Label: "switch_on_geo_update_credit", Status: switch_on_geo_update_credit},
 		OpTag{Label: "switch_on_geo_search", Status: switch_on_geo_search},
-		OpTag{Label: "switch_on_geo_async_update", Status: switch_on_geo_async_update}}
+		OpTag{Label: "switch_on_geo_async_update", Status: switch_on_geo_async_update},
+		OpTag{Label: "switch_on_apple_receipt", Status: switch_on_apple_receipt_prx}}
 
 	status, _ := json.Marshal(tags)
 
@@ -105,6 +112,8 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 
 	switchOn_geo_search := req.FormValue("switch_on_geo_search")
 	switch_on_geo_async_update := req.FormValue("switch_on_geo_async_update")
+
+	switch_on_apple_reciept_prx := self.zkmanager.Get("switch_on_apple_receipt")
 
 	succ := false
 	reponse := &entry.Response{}
@@ -145,6 +154,10 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 
 	if len(switch_on_geo_async_update) > 0 {
 		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_GEO_ASYN_UPDATE, switch_on_geo_async_update)
+	}
+
+	if len(switch_on_apple_reciept_prx) > 0 {
+		succ = self.zkmanager.SetGoRedisSwitch(SWITCH_ON_APPLE_REPURL, switch_on_apple_reciept_prx)
 	}
 
 	if succ {

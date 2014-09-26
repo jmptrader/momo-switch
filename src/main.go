@@ -6,6 +6,7 @@ import (
 	// "os"
 	"encoding/json"
 	"net/http"
+	_ "net/http/pprof"
 	"strings"
 )
 
