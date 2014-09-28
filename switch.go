@@ -1,12 +1,12 @@
 package main
 
 import (
-	"control"
 	"flag"
 	"fmt"
-	"location"
+	"momo-switch/control"
+	"momo-switch/location"
+	"momo-switch/zkmanager"
 	"net/http"
-	"zkmanager"
 )
 
 func main() {

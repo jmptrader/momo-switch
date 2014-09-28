@@ -2,8 +2,8 @@ package control
 
 import (
 	"encoding/json"
-	"entry"
 	"fmt"
+	"momo-switch/entry"
 	"net/http"
 	"strings"
 )
