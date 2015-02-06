@@ -49,14 +49,13 @@ func InitControl() *InstanceControl {
 	managers["solr"] = solrmanager
 
 	flumeManager := NewManager("flume", func(name string) string {
-
 		return name
 
 	}, func(instance SupervisorInstance) bool {
 		/**
 		 * 过滤掉redis 和solr
 		 */
-		return strings.Contains(instance.clusterName, "flume")
+		return !strings.Contains(instance.clusterName, "flume")
 	})
 	flumeManager.ScheduleInitHosts()
 	managers["flume"] = flumeManager

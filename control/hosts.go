@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"sort"
+	"strings"
 	"time"
 )
 
@@ -42,18 +43,20 @@ type InstanceManager struct {
 	//用于存放服务名称到moa实例的映射
 	Instances     map[string][]SupervisorInstance
 	InstanceNames []string
+	hostprefix    string
 }
 
 /**
  *初始化manager
  *
  */
-func NewManager(hostType string, namefilter func(name string) string,
+func NewManager(hostType string, hostprefix string, namefilter func(name string) string,
 	filter func(instance SupervisorInstance) bool) *InstanceManager {
 	manager := &InstanceManager{}
 	manager.hostType = hostType
 	manager.filter = filter
 	manager.namefilter = namefilter
+	manager.hostprefix = hostprefix
 	manager.ScheduleInitHosts()
 	return manager
 }
@@ -98,10 +101,15 @@ func (self *InstanceManager) syncMoaHosts() {
 	//解析出机器列表
 	var hosts []string
 	json.Unmarshal(data, &hosts)
+
 	fmt.Printf("[%s] hosts:%s, hosts arr len:%n\n", self.hostType, string(data), len(hosts))
 	if nil != hosts {
 		//如果得到了hosts
 		for _, v := range hosts {
+			if !strings.Contains(v, self.hostprefix) {
+				continue
+			}
+
 			baseUrl := "http://" + v + ":9001"
 			doc, err := goquery.NewDocument(baseUrl)
 			if nil == err {
