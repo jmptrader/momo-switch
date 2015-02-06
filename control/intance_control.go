@@ -15,7 +15,7 @@ type InstanceControl struct {
 func InitControl() *InstanceControl {
 	managers := make(map[string]*InstanceManager, 0)
 
-	manager := NewManager("moa_servers", func(name string) string {
+	manager := NewManager("moa_servers", "moa", func(name string) string {
 
 		return name
 
@@ -31,7 +31,7 @@ func InitControl() *InstanceControl {
 
 	fmt.Println("初始化moa机器成功........")
 
-	solrmanager := NewManager("solr_servers", func(name string) string {
+	solrmanager := NewManager("solr_servers", "solr", func(name string) string {
 		cluster := strings.Split(name, "-shard")[0]
 		if strings.Contains(cluster, "backup") {
 			cluster = strings.Split(cluster, "-backup")[0]
@@ -48,7 +48,7 @@ func InitControl() *InstanceControl {
 	solrmanager.ScheduleInitHosts()
 	managers["solr"] = solrmanager
 
-	flumeManager := NewManager("flume", func(name string) string {
+	flumeManager := NewManager("flume", "flume", func(name string) string {
 		return name
 
 	}, func(instance SupervisorInstance) bool {
