@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	BAISC_URL     = "http://kratos-ng.wemomo.com/api/zabbix/hostgroups/"
+	BAISC_URL     = "http://kratos-ng .momo .com/api/sa/zabbix-hostgroups/"
 	SCHEDULE_TIME = 60 * time.Second
 )
 
