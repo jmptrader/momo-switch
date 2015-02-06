@@ -15,7 +15,7 @@ type InstanceControl struct {
 func InitControl() *InstanceControl {
 	managers := make(map[string]*InstanceManager, 0)
 
-	manager := NewManager("moa_servers", "moa", func(name string) string {
+	manager := NewManager("moa_servers", "moa0", func(name string) string {
 
 		return name
 

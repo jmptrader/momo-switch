@@ -106,7 +106,8 @@ func (self *InstanceManager) syncMoaHosts() {
 	if nil != hosts {
 		//如果得到了hosts
 		for _, v := range hosts {
-			if !strings.Contains(v, self.hostprefix) {
+			if !strings.HasPrefix(v, self.hostprefix) ||
+				strings.HasSuffix(v, "test") || strings.HasSuffix(v, "vm") {
 				continue
 			}
 
