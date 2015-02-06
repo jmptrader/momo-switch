@@ -25,5 +25,6 @@ func main() {
 	http.HandleFunc("/switch/location_noftiy/q", radaGoRedis.HandleLocationNotifySwitchQ)
 	http.HandleFunc("/switch/moa/q_instances", control.HandleQueryMoaNameQ)
 	http.HandleFunc("/switch/solr/q_instances", control.HandleQueryMoaNameQ)
+	http.HandleFunc("/switch/flume/q_instances", control.HandleQueryMoaNameQ)
 	http.ListenAndServe(":7979", nil)
 }
