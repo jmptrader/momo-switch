@@ -113,7 +113,7 @@ func (self *RadaGoRedis) HandleLocationNotifySwitch(resp http.ResponseWriter, re
 	switchOn_geo_search := req.FormValue("switch_on_geo_search")
 	switch_on_geo_async_update := req.FormValue("switch_on_geo_async_update")
 
-	switch_on_apple_reciept_prx := self.zkmanager.Get("switch_on_apple_receipt")
+	switch_on_apple_reciept_prx := req.FormValue("switch_on_apple_receipt")
 
 	succ := false
 	reponse := &entry.Response{}
