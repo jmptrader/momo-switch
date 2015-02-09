@@ -63,7 +63,7 @@ func InitControl() *InstanceControl {
 	managers["flume"] = flumeManager
 	fmt.Println("初始化flume机器成功........")
 
-	tradeManager := NewManager("trade", "moa-trade", func(name string) string {
+	tradeManager := NewManager("moa_servers", "moa-trade", func(name string) string {
 		return name
 
 	}, func(instance SupervisorInstance) bool {
@@ -73,7 +73,7 @@ func InitControl() *InstanceControl {
 	managers["trade"] = tradeManager
 	fmt.Println("初始化trade机器成功........")
 
-	taskManager := NewManager("task", "task", func(name string) string {
+	taskManager := NewManager("task_servers", "task0", func(name string) string {
 		return name
 
 	}, func(instance SupervisorInstance) bool {
