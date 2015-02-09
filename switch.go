@@ -26,5 +26,7 @@ func main() {
 	http.HandleFunc("/switch/moa/q_instances", control.HandleQueryMoaNameQ)
 	http.HandleFunc("/switch/solr/q_instances", control.HandleQueryMoaNameQ)
 	http.HandleFunc("/switch/flume/q_instances", control.HandleQueryMoaNameQ)
+	http.HandleFunc("/switch/task/q_instances", control.HandleQueryMoaNameQ)
+	http.HandleFunc("/switch/trade/q_instances", control.HandleQueryMoaNameQ)
 	http.ListenAndServe(":7979", nil)
 }

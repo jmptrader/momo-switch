@@ -48,7 +48,9 @@ func InitControl() *InstanceControl {
 	solrmanager.ScheduleInitHosts()
 	managers["solr"] = solrmanager
 
-	flumeManager := NewManager("flume", "flume", func(name string) string {
+	fmt.Println("初始化solr机器成功........")
+
+	flumeManager := NewManager("flume", "flume0", func(name string) string {
 		return name
 
 	}, func(instance SupervisorInstance) bool {
@@ -59,8 +61,27 @@ func InitControl() *InstanceControl {
 	})
 	flumeManager.ScheduleInitHosts()
 	managers["flume"] = flumeManager
+	fmt.Println("初始化flume机器成功........")
 
-	fmt.Println("初始化solr机器成功........")
+	tradeManager := NewManager("trade", "moa-trade", func(name string) string {
+		return name
+
+	}, func(instance SupervisorInstance) bool {
+		return false
+	})
+	tradeManager.ScheduleInitHosts()
+	managers["trade"] = tradeManager
+	fmt.Println("初始化trade机器成功........")
+
+	taskManager := NewManager("task", "task", func(name string) string {
+		return name
+
+	}, func(instance SupervisorInstance) bool {
+		return false
+	})
+	taskManager.ScheduleInitHosts()
+	managers["task"] = taskManager
+	fmt.Println("初始化task机器成功........")
 
 	return &InstanceControl{managers: managers}
 }
